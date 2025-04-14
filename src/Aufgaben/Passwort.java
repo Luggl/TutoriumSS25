@@ -4,10 +4,12 @@ import java.util.Scanner;
 
 public class Passwort {
     public static void main(String[] args) {
+
         String passwort = "Geheim123";
         Scanner scanner = new Scanner(System.in);
         System.out.println("Gib das Passwort ein: ");
         boolean check = false;
+
         while(!check){
             String userEingabe = scanner.nextLine();
             if(userEingabe.equals(passwort)){
