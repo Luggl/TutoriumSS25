@@ -42,10 +42,17 @@ public class Polonaise {
         Roboter a = new Roboter("Oli", 190);
         Roboter b = new Roboter("Lucas", 150);
         Roboter c = new Roboter("Lukas", 151);
+        Roboter e = new Roboter ("a", 165);
+        Roboter f = new Roboter("a", 188);
+        Roboter g = new Roboter ("a", 140);
+
         Polonaise polonaise = new Polonaise();
         polonaise.anhaengen(a);
         polonaise.anhaengen(b);
         polonaise.anhaengen(c);
+        polonaise.anhaengen(e);
+        polonaise.anhaengen(f);
+        polonaise.anhaengen(g);
 
         polonaise.vorstellen();
     }
