@@ -18,18 +18,26 @@ public class Lottoziehung {
     }
 
     public int ziehung(){
-        temp = start;
-        oldtemp = start.next;
-        while(temp.next != null){
+        temp = start.next;
+        oldtemp = start;
+        if(oldtemp != null){
             if(Math.random()*100 >=50){
-                int erg = temp.wert;
-                temp = oldtemp;
-                return (erg);
-            }else{
-                temp = temp.next;
+                int erg = oldtemp.getWert();
+                start = start.next;
+            }
+            while(temp != null){
+                if(Math.random()*100 >=50){
+                    int erg = temp.getWert();
+                    oldtemp.next = temp.next;
+                    return (erg);
+                }else{
+                    temp = temp.next;
+                    oldtemp = oldtemp.next;
+                }
             }
         }
-        return(temp.wert);
+
+        return(oldtemp.getWert());
     }
 
 
@@ -44,6 +52,10 @@ public class Lottoziehung {
         int[] ergebnis = new int[6];
         for(int i = 0; i < ergebnis.length; i++){
             ergebnis[i] = lottoziehung.ziehung();
+        }
+
+        for(int i = 0; i< ergebnis.length;i++){
+            System.out.println(ergebnis[i]);
         }
     }
 }
